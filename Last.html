@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ask Dr. Katara to Luv me❤️</title>
+
+    <style>
+      body {
+        margin: 0;
+        background: rgb(253, 157, 197);
+        font-family: Arial, sans-serif;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      h1 {
+        color: white;
+      }
+
+      /* ❤️ HEART STYLE */
+      .heart {
+        position: absolute;
+        color: red;
+        animation: float 4s linear infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(100vh);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-10vh);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body onload="startHearts(); playMusic();">
+
+    <!-- 🎵 BACKGROUND MUSIC -->
+    <audio id="bgMusic" loop>
+      <source src="Music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+
+      <img src="Last.gif" alt="Love GIF" style="width:300px;">
+
+      <h1>Hehehe I knew it❤️</h1>
+      <p><b>I Luv you so much my Pookie Dr.🎀</b></p>
+
+    </div>
+
+    <script>
+      // ❤️ HEART ANIMATION
+      function startHearts(){
+        setInterval(()=>{
+          let heart = document.createElement("div");
+          heart.className="heart";
+          heart.innerHTML="❤️";
+
+          heart.style.left = Math.random()*100+"vw";
+          heart.style.fontSize = (Math.random()*25+15)+"px";
+
+          document.body.appendChild(heart);
+
+          setTimeout(()=>heart.remove(),4000);
+        },200);
+      }
+
+      // 🎵 PLAY MUSIC
+      function playMusic(){
+        const music = document.getElementById("bgMusic");
+        music.volume = 0.6;
+        music.play();
+      }
+    </script>
+
+  </body>
+</html>
